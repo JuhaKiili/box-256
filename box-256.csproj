@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assembler.cs" />
-    <Compile Include="CPU.cs" />
-    <Compile Include="OpCode.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Src\Assembler.cs" />
+    <Compile Include="Src\CPU.cs" />
+    <Compile Include="Src\OpCode.cs" />
+    <Compile Include="Src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
