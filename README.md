@@ -1,5 +1,5 @@
 # BOX-256
-BOX-256 Compiler and Virtual Machine in C#
+BOX-256 compiler and virtual machine in C#
 
 Simplified version of compiler and virtual machine used in the assembler programming game BOX-256 (http://box-256.com)
 There is no UI, playback controls, etc. included, just an example implementation that outputs text.
