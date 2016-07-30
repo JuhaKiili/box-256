@@ -42,7 +42,7 @@ namespace Box256
 
 			byte[] result = new byte[4];
 
-			if (IsCommutativeOperation(line[0]) && pointerDepth(line[1]) < pointerDepth(line[2]))
+			if (IsCommutativeOperation(line[0]) && PointerDepth(line[1]) < PointerDepth(line[2]))
 			{
 				string tmp = line[1];
 				line[1] = line[2];
@@ -51,7 +51,7 @@ namespace Box256
 
 			if (IsMathOperation(line[0]))
 			{
-				if (pointerDepth(line[1]) == 0 && pointerDepth(line[2]) == 0)
+				if (PointerDepth(line[1]) == 0 && PointerDepth(line[2]) == 0)
 				{
 					string target = line[3];
 					if (line[0] == "ADD")
@@ -59,14 +59,14 @@ namespace Box256
 					if (line[0] == "SUB")
 						line[1] = (ParamToValue(line[1]) - ParamToValue(line[2])).ToString("X2");
 					if (line[0] == "MUL")
-						line[1] = (ParamToValue(line[1])*ParamToValue(line[2])).ToString("X2");
+						line[1] = (ParamToValue(line[1]) * ParamToValue(line[2])).ToString("X2");
 					if (line[0] == "DIV")
 						line[1] = ParamToValue(line[2]) > 0
-							? (ParamToValue(line[1])/ParamToValue(line[2])).ToString("X2")
+							? (ParamToValue(line[1]) / ParamToValue(line[2])).ToString("X2")
 							: (0).ToString("X2");
 					if (line[0] == "MOD")
 						line[1] = ParamToValue(line[2]) > 0
-							? (ParamToValue(line[1])%ParamToValue(line[2])).ToString("X2")
+							? (ParamToValue(line[1]) % ParamToValue(line[2])).ToString("X2")
 							: (0).ToString("X2");
 					line[0] = "MOV";
 					line[2] = target;
@@ -133,9 +133,9 @@ namespace Box256
 
 		static OpCodes.OpCode InstructionToOpCode(string instruction, string param1, string param2, string param3)
 		{
-			int d1 = pointerDepth(param1);
-			int d2 = pointerDepth(param2);
-			int d3 = pointerDepth(param3);
+			int d1 = PointerDepth(param1);
+			int d2 = PointerDepth(param2);
+			int d3 = PointerDepth(param3);
 
 			switch (instruction.ToUpper())
 			{
@@ -331,7 +331,7 @@ namespace Box256
 			return OpCodes.OpCode.NOP;
 		}
 
-		static int pointerDepth(string param)
+		static int PointerDepth(string param)
 		{
 			if (string.IsNullOrEmpty(param) || param[0] != '*' && param[0] != '@')
 				return 0;
