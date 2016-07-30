@@ -7,7 +7,7 @@ There is no UI, playback controls, etc. included, just an example implementation
 Differences with the game:
 - THR and PIX instruction removed
 - Program counter hidden as internal state and no longer accessible in BOX-256 memory
-- New blank opcode "SYS" for your external/extending purposes
+- New opcodes INP and OUT to implement I/O
 
 The example solution/project is made with Visual Studio 2013.
 
