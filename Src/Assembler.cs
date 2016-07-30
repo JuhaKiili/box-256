@@ -97,7 +97,9 @@ namespace Box256
 				line[0] == "SUB" ||
 				line[0] == "MUL" ||
 				line[0] == "DIV" ||
-				line[0] == "MOD"
+				line[0] == "MOD" ||
+				line[0] == "INP" ||
+				line[0] == "OUT"
 				;
 		}
 
@@ -295,6 +297,25 @@ namespace Box256
 					if (d1 == 2 && d2 == 0 && d3 == 2) return OpCodes.OpCode.MOD202;
 					if (d1 == 2 && d2 == 1 && d3 == 2) return OpCodes.OpCode.MOD212;
 					if (d1 == 2 && d2 == 2 && d3 == 2) return OpCodes.OpCode.MOD222;
+					break;
+				case ("INP"):
+					if (d1 == 0 && d2 == 1) return OpCodes.OpCode.INP01;
+					if (d1 == 1 && d2 == 1) return OpCodes.OpCode.INP11;
+					if (d1 == 2 && d2 == 1) return OpCodes.OpCode.INP21;
+					if (d1 == 0 && d2 == 2) return OpCodes.OpCode.INP02;
+					if (d1 == 1 && d2 == 2) return OpCodes.OpCode.INP12;
+					if (d1 == 2 && d2 == 2) return OpCodes.OpCode.INP22;
+					break;
+				case ("OUT"):
+					if (d1 == 0 && d2 == 0) return OpCodes.OpCode.OUT00;
+					if (d1 == 1 && d2 == 0) return OpCodes.OpCode.OUT10;
+					if (d1 == 2 && d2 == 0) return OpCodes.OpCode.OUT20;
+					if (d1 == 0 && d2 == 1) return OpCodes.OpCode.OUT01;
+					if (d1 == 1 && d2 == 1) return OpCodes.OpCode.OUT11;
+					if (d1 == 2 && d2 == 1) return OpCodes.OpCode.OUT21;
+					if (d1 == 0 && d2 == 2) return OpCodes.OpCode.OUT02;
+					if (d1 == 1 && d2 == 2) return OpCodes.OpCode.OUT12;
+					if (d1 == 2 && d2 == 2) return OpCodes.OpCode.OUT22;
 					break;
 			}
 

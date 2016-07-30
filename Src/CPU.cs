@@ -469,7 +469,51 @@ namespace Box256
 					case OpCodes.OpCode.MOD222:
 						SetMemory((byte) Modulo(GetMemory2(p1), GetMemory2(p2)), GetMemory(p3));
 						break;
-						
+					case OpCodes.OpCode.INP01:
+						SetMemory(Input(p1), p2);
+						break;
+					case OpCodes.OpCode.INP11:
+						SetMemory(Input(GetMemory(p1)), p2);
+						break;
+					case OpCodes.OpCode.INP21:
+						SetMemory(Input(GetMemory2(p1)), p2);
+						break;
+					case OpCodes.OpCode.INP02:
+						SetMemory(Input(p1), GetMemory(p2));
+						break;
+					case OpCodes.OpCode.INP12:
+						SetMemory(Input(GetMemory(p1)), GetMemory(p2));
+						break;
+					case OpCodes.OpCode.INP22:
+						SetMemory(Input(GetMemory2(p1)), GetMemory(p2));
+						break;
+					case OpCodes.OpCode.OUT00:
+						Output(p1, p2);
+						break;
+					case OpCodes.OpCode.OUT10:
+						Output(GetMemory(p1), p2);
+						break;
+					case OpCodes.OpCode.OUT20:
+						Output(GetMemory2(p1), p2);
+						break;
+					case OpCodes.OpCode.OUT01:
+						Output(p1, GetMemory(p2));
+						break;
+					case OpCodes.OpCode.OUT11:
+						Output(GetMemory(p1), GetMemory(p2));
+						break;
+					case OpCodes.OpCode.OUT21:
+						Output(GetMemory2(p1), GetMemory(p2));
+						break;
+					case OpCodes.OpCode.OUT02:
+						Output(p1, GetMemory2(p2));
+						break;
+					case OpCodes.OpCode.OUT12:
+						Output(GetMemory(p1), GetMemory2(p2));
+						break;
+					case OpCodes.OpCode.OUT22:
+						Output(GetMemory2(p1), GetMemory2(p2));
+						break;
 				}
 			}
 
@@ -559,6 +603,26 @@ namespace Box256
 		{
 			m_ProgramCounter = (byte) (GetMemory(address)%m_Memory.Length);
 			m_ExecutionJumpedDuringTick = true;
+		}
+		
+		// Implement your I/O here
+		// Example code:
+
+		// INP 002 @34 000 ... Input from port 2 and store the byte to memory location 34
+		// OUT 01C 0AB 000 ... Output to port 1C value AB
+		// OUT 01D @56 000 ... Output to port 1D the value in memory location 56 
+
+		// Handle input from port
+		byte Input(byte port)
+		{
+			// Your implementation here
+			return 0;
+		}
+
+		// Handle output to port
+		void Output(byte port, byte data)
+		{
+			// Your implementation here
 		}
 	}
 }
