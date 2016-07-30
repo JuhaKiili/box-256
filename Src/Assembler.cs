@@ -97,8 +97,7 @@ namespace Box256
 				line[0] == "SUB" ||
 				line[0] == "MUL" ||
 				line[0] == "DIV" ||
-				line[0] == "MOD" ||
-				line[0] == "SYS"
+				line[0] == "MOD"
 				;
 		}
 
@@ -296,35 +295,6 @@ namespace Box256
 					if (d1 == 2 && d2 == 0 && d3 == 2) return OpCodes.OpCode.MOD202;
 					if (d1 == 2 && d2 == 1 && d3 == 2) return OpCodes.OpCode.MOD212;
 					if (d1 == 2 && d2 == 2 && d3 == 2) return OpCodes.OpCode.MOD222;
-					break;
-				case ("SYS"):
-					if (d1 == 0 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS000;
-					if (d1 == 1 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS100;
-					if (d1 == 2 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS200;
-					if (d1 == 0 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS010;
-					if (d1 == 1 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS110;
-					if (d1 == 2 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS210;
-					if (d1 == 0 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS020;
-					if (d1 == 1 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS120;
-					if (d1 == 2 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS220;
-					if (d1 == 0 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS001;
-					if (d1 == 1 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS101;
-					if (d1 == 2 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS201;
-					if (d1 == 0 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS011;
-					if (d1 == 1 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS111;
-					if (d1 == 2 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS211;
-					if (d1 == 0 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS021;
-					if (d1 == 1 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS121;
-					if (d1 == 2 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS221;
-					if (d1 == 0 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS002;
-					if (d1 == 1 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS102;
-					if (d1 == 2 && d2 == 0 && d3 == 0) return OpCodes.OpCode.SYS202;
-					if (d1 == 0 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS012;
-					if (d1 == 1 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS112;
-					if (d1 == 2 && d2 == 1 && d3 == 0) return OpCodes.OpCode.SYS212;
-					if (d1 == 0 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS022;
-					if (d1 == 1 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS122;
-					if (d1 == 2 && d2 == 2 && d3 == 0) return OpCodes.OpCode.SYS222;
 					break;
 			}
 

@@ -469,88 +469,7 @@ namespace Box256
 					case OpCodes.OpCode.MOD222:
 						SetMemory((byte) Modulo(GetMemory2(p1), GetMemory2(p2)), GetMemory(p3));
 						break;
-
-					case OpCodes.OpCode.SYS000:
-						SysCall(p1, p2, p3);
-						break;
-					case OpCodes.OpCode.SYS100:
-						SysCall(GetMemory(p1), p2, p3);
-						break;
-					case OpCodes.OpCode.SYS200:
-						SysCall(GetMemory2(p1), p2, p3);
-						break;
-					case OpCodes.OpCode.SYS010:
-						SysCall(p1, GetMemory(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS110:
-						SysCall(GetMemory(p1), GetMemory(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS210:
-						SysCall(GetMemory2(p1), GetMemory(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS020:
-						SysCall(p1, GetMemory2(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS120:
-						SysCall(GetMemory(p1), GetMemory2(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS220:
-						SysCall(GetMemory2(p1), GetMemory2(p2), p3);
-						break;
-					case OpCodes.OpCode.SYS001:
-						SysCall(p1, p2, GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS101:
-						SysCall(GetMemory(p1), p2, GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS201:
-						SysCall(GetMemory2(p1), p2, GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS011:
-						SysCall(p1, GetMemory(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS111:
-						SysCall(GetMemory(p1), GetMemory(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS211:
-						SysCall(GetMemory2(p1), GetMemory(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS021:
-						SysCall(p1, GetMemory2(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS121:
-						SysCall(GetMemory(p1), GetMemory2(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS221:
-						SysCall(GetMemory2(p1), GetMemory2(p2), GetMemory(p3));
-						break;
-					case OpCodes.OpCode.SYS002:
-						SysCall(p1, p2, GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS102:
-						SysCall(GetMemory(p1), p2, GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS202:
-						SysCall(GetMemory2(p1), p2, GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS012:
-						SysCall(p1, GetMemory(p2), GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS112:
-						SysCall(GetMemory(p1), GetMemory(p2), GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS212:
-						SysCall(GetMemory2(p1), GetMemory(p2), GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS022:
-						SysCall(p1, GetMemory2(p2), GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS122:
-						SysCall(GetMemory(p1), GetMemory2(p2), GetMemory2(p3));
-						break;
-					case OpCodes.OpCode.SYS222:
-						SysCall(GetMemory2(p1), GetMemory2(p2), GetMemory2(p3));
-						break;
+						
 				}
 			}
 
@@ -640,16 +559,6 @@ namespace Box256
 		{
 			m_ProgramCounter = (byte) (GetMemory(address)%m_Memory.Length);
 			m_ExecutionJumpedDuringTick = true;
-		}
-		
-		private void SysCall(byte p0, byte p1, byte p2)
-		{
-			// Implement your external system calls here
-			
-			//     p0  p1  p2
-			// SYS 000 000 000
-
-			// Use this for example I/O with external systems
 		}
 	}
 }
