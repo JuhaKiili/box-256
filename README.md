@@ -5,7 +5,7 @@ Simplified version of compiler and virtual machine used in the assembler program
 There is no UI, playback controls, etc. included, just an example implementation that outputs text.
 
 Differences with the game:
-- No multi-threading
+- No multithreading
 - Program counter hidden as internal state and no longer accessible in BOX-256 memory
 - New blank opcode "SYS" for your external/extending purposes
 
