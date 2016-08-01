@@ -274,7 +274,7 @@ namespace Box256
 					if (d1 == 2 && d2 == 1 && d3 == 1) return OpCodes.OpCode.DIV211;
 					if (d1 == 2 && d2 == 2 && d3 == 1) return OpCodes.OpCode.DIV221;
 					if (d1 == 0 && d2 == 1 && d3 == 2) return OpCodes.OpCode.DIV012;
-					if (d1 == 0 && d2 == 2 && d3 == 21) return OpCodes.OpCode.DIV022;
+					if (d1 == 0 && d2 == 2 && d3 == 2) return OpCodes.OpCode.DIV022;
 					if (d1 == 1 && d2 == 0 && d3 == 2) return OpCodes.OpCode.DIV102;
 					if (d1 == 1 && d2 == 1 && d3 == 2) return OpCodes.OpCode.DIV112;
 					if (d1 == 1 && d2 == 2 && d3 == 2) return OpCodes.OpCode.DIV122;
